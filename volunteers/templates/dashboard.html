@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ volunteer.user.username }}!</h2>
+<h4>Your Tasks</h4>
+<ul>
+    {% for task in tasks %}
+    <li>{{ task.description }} - {% if task.completed %}✅{% else %}❌{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
